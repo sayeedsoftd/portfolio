@@ -28,12 +28,29 @@
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-main);
     color: var(--text-primary);
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   body {
     background-color: var(--bg-main);
     color: var(--text-primary);
     overflow-x: hidden;
+    max-width: 100vw;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root {
+    overflow-x: hidden;
+    max-width: 100vw;
+    position: relative;
+  }
+
+  /* Prevent iOS automatic input zoom on focus */
+  @media screen and (max-width: 639px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
   }
 
   /* Custom scrollbar */

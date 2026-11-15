@@ -37,7 +37,7 @@ function StatCounter({ target, suffix = '', duration = 2 }: { target: number; su
   }, [isInView, target, duration]);
 
   return (
-    <span ref={ref} className="font-display font-extrabold text-3xl sm:text-4xl text-white">
+    <span ref={ref} className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-white">
       {count}{suffix}
     </span>
   );
@@ -75,7 +75,7 @@ function TiltPhotoCard({ photo, alt }: { photo: string; alt: string }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ perspective: 1000 }}
-      className="relative w-full h-full min-h-[340px] rounded-3xl overflow-hidden glass-panel border border-white/10 group cursor-pointer"
+      className="relative w-full h-full min-h-[280px] sm:min-h-[340px] rounded-3xl overflow-hidden glass-panel border border-white/10 group cursor-pointer"
     >
       <motion.div
         animate={{ rotateX: rotX, rotateY: rotY }}

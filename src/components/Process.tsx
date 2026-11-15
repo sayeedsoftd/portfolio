@@ -43,7 +43,7 @@ export default function Process() {
         </div>
 
         {/* Stacking Cards Process Container */}
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {processSteps.map((step, index) => (
             <motion.div
               key={step.number}
@@ -52,9 +52,9 @@ export default function Process() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               style={{
-                top: `calc(120px + ${index * 24}px)`,
+                top: `calc(80px + ${index * 20}px)`,
               }}
-              className="sticky glass-panel rounded-3xl p-6 sm:p-10 border border-white/10 shadow-2xl hover:border-cyan-500/40 transition-colors bg-[#08081A]/90 backdrop-blur-2xl"
+              className="relative md:sticky glass-panel rounded-3xl p-5 sm:p-8 md:p-10 border border-white/10 shadow-2xl hover:border-cyan-500/40 transition-colors bg-[#08081A]/95 backdrop-blur-2xl"
             >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 

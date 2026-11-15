@@ -247,7 +247,7 @@ export default function Contact() {
 
           {/* Right Column: Glass Form (col-span-7) */}
           <div className="lg:col-span-7">
-            <div className="glass-panel rounded-3xl p-8 sm:p-10 border border-white/15 relative overflow-hidden shadow-2xl">
+            <div className="glass-panel rounded-3xl p-5 sm:p-8 md:p-10 border border-white/15 relative overflow-hidden shadow-2xl">
               
               <AnimatePresence mode="wait">
                 {isSuccess ? (

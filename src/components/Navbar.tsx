@@ -40,6 +40,18 @@ export default function Navbar({ activeSection, isDark, toggleTheme }: NavbarPro
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY, mobileMenuOpen]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   const handleSoundToggle = () => {
     const next = soundManager.toggleMute();
     setIsMuted(next);
@@ -176,7 +188,7 @@ export default function Navbar({ activeSection, isDark, toggleTheme }: NavbarPro
             animate={{ opacity: 1, backdropFilter: 'blur(24px)' }}
             exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-30 bg-[#050510]/95 flex flex-col justify-between p-6 pt-28 md:hidden"
+            className="fixed inset-0 z-30 bg-[#050510]/95 flex flex-col justify-between p-6 pt-24 pb-8 md:hidden overflow-y-auto max-h-screen"
           >
             {/* Ambient Aurora */}
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-purple-600/20 blur-[100px] pointer-events-none" />
